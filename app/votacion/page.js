@@ -5,18 +5,18 @@ import listas from "../../data/votaciones.json"
 import { useState } from "react";
 
 export default function Home(){
-  // variable para ver si una opcion fue seleccionada y la funcion que la altera
+  // variable para ver si una opción fue seleccionada y la función que la altera
   const [seleccionada, setSeleccionada] = useState(null);
   return (
     <div >
-      {/* boton para ir a home*/ }
-      <Link href={"../"}>Home</Link>
-      <h1> Titulo Pagina de votacion </h1>
+      {/* botón para ir a home*/ }
+      <Link className="bloque_link"href={"../"}>Home</Link>
+      <h1> Titulo Página de votación </h1>
       {
-        // funcion que ira opcion por opcion tomando sus datos poniendolas en el div
+        // función que irá opción por opción tomando sus datos poniéndolas en el div
         listas.map((e,i) => {
           return (
-            <div className="contenedor_opciones" key={i}>
+            <div className="bloque" key={i}>
               <div>identificador</div>
               {e.id}
 
@@ -34,9 +34,18 @@ export default function Home(){
           )
         })
       }
-      <button >
-        Guardar
-      </button>
+      <div className="bloque">
+        {seleccionada ? 
+        (
+          <Link href={"../"}>
+            <button className="btn_votar">Enviar votación</button>
+          </Link>
+        ) : (
+          <button className="btn_enviar" disabled>
+            Selecciona un postulante
+          </button>
+        )}
+      </div>
 
     </div>
   )

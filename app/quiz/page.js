@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import preguntas from "../../data/preguntas.json"
 
-// dirrecion de botones
+// dirección de botones
 let direccion_boton_enviar = "votacion";
 
 
@@ -17,9 +17,9 @@ export default function Quiz() {
   const quiz_respondido = Object.keys(respuestas).length === preguntas.length;
 
   return (
-    <div className="cont_vota">
-      <Link className="vuelve_vota" href="/">Volver a inicio</Link>
-      <h1>Votación</h1>
+    <div className="div_quiz">
+      <Link className="bloque_link" href="/">Volver a inicio</Link>
+      <h1>CUESTIONARIO</h1>
 
       {preguntas.map((pregunta) => (
         <div className="bloque" key={pregunta.id}>
