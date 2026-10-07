@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Home(){
   return (
     <div>
-      <Link href={"../"}>Home</Link>
+      <Link className="bloque_link"href={"../"}>Home</Link>
       <h1> Titulo Pagina de Creación </h1>
     </div>
   )
