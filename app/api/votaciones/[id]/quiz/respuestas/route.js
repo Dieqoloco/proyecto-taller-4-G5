@@ -28,6 +28,7 @@ export async function POST(request, { params }) {
        AND "eleccionid" = $2`,
       [tokenHash, id]
     );
+    console.log("PC 1")
 
     if (validacion.rowCount === 0) {
       return NextResponse.json(
@@ -35,16 +36,19 @@ export async function POST(request, { params }) {
         { status: 401 }
       );
     }
-
+    console.log("PC 2")
+    
     // Obtener el spreadsheet de la elección
     const spreadsheetId = await obtenerSpreadsheet(`eleccion-${id}`);
-
+    console.log("PC 3")
+    
     // Guardar o actualizar las respuestas
     await guardarRespuestasQuiz(
       spreadsheetId,
       tokenHash,
       respuestas
     );
+    console.log("PC 4")
 
     return NextResponse.json({
       guardado: true
