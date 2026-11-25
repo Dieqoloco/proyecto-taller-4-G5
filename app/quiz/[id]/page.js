@@ -105,6 +105,8 @@ export default function QuizPublico(){
           })
         }
       );
+      console.log("Estado HTTP:", respuesta.status);
+      console.log("Respuesta:", await respuesta.clone().text());
 
       const resultado = await respuesta.json();
 

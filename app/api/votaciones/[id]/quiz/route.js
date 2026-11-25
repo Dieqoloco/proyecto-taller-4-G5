@@ -13,7 +13,7 @@ export const runtime = "nodejs";
 export async function GET(request, { params }) {
 
     try {
-
+ 
         // Obtenemos el ID de la elección
         const { id } = await params;
 

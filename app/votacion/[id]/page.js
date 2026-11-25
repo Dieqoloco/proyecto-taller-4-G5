@@ -107,7 +107,7 @@ export default function Votacion() {
   }, [id, token]);
 
   
-useEffect(() => {
+  useEffect(() => {
     async function verificarQuiz() {
         try {
             console.log("ID:", id);
